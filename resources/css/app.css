@@ -1,3 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        color: #0D0D0D;
+        background: #F2F2F2;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    :focus-visible {
+        outline: 2px solid #5CC8F2;
+        outline-offset: 2px;
+    }
+}
+
+@layer components {
+    /* Botón primario */
+    .btn-primary {
+        @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white rounded-lg transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+        background: #5CC8F2;
+    }
+    .btn-primary:hover:not(:disabled) {
+        background: #3BA8D2;
+    }
+
+    /* Botón secundario */
+    .btn-secondary {
+        @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border transition-all duration-150 disabled:opacity-50;
+        color: #595959;
+        border-color: #D1D5DB;
+        background: white;
+    }
+    .btn-secondary:hover:not(:disabled) {
+        background: #F9FAFB;
+    }
+
+    /* Botón peligro */
+    .btn-danger {
+        @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white rounded-lg transition-all duration-150;
+        background: #EF4444;
+    }
+    .btn-danger:hover {
+        background: #DC2626;
+    }
+
+    /* Card */
+    .card {
+        @apply bg-white rounded-xl border border-gray-200 shadow-sm;
+    }
+
+    /* Input base */
+    .input {
+        @apply w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-shadow;
+        --tw-ring-color: #5CC8F2;
+        color: #0D0D0D;
+    }
+
+    /* Label */
+    .label {
+        @apply block text-xs font-medium mb-1;
+        color: #595959;
+    }
+
+    /* Badge de estado */
+    .badge {
+        @apply inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-full;
+    }
+
+    /* Tabla base */
+    .table-auto thead th {
+        @apply px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide;
+        color: #595959;
+        background: #F9FAFB;
+    }
+    .table-auto tbody td {
+        @apply px-4 py-3 text-sm border-t border-gray-100;
+        color: #0D0D0D;
+    }
+    .table-auto tbody tr:hover td {
+        background: #F9FAFB;
+    }
+
+    /* Page header */
+    .page-header {
+        @apply flex items-center justify-between mb-6;
+    }
+    .page-title {
+        @apply text-xl font-bold;
+        color: #0D0D0D;
+    }
+}
