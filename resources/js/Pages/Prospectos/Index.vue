@@ -63,7 +63,7 @@
 <script setup>
 import { ref } from 'vue'
 import { router } from '@inertiajs/vue3'
-import { VueDraggable } from 'vue-draggable-plus'
+import { VueDraggable } from 'vuedraggable'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import ProspectoCard from '@/Components/Prospectos/ProspectoCard.vue'
 import ModalNuevoProspecto from '@/Components/Prospectos/ModalNuevoProspecto.vue'
