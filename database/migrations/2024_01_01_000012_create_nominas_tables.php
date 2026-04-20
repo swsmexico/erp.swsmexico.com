@@ -32,7 +32,7 @@ return new class extends Migration
             $table->enum('tipo', ['sueldo', 'bono_fijo', 'bono_extraordinario']);
             $table->text('descripcion')->nullable();
             $table->foreignId('cuenta_id')->nullable()->constrained('cuentas')->nullOnDelete();
-            $table->foreignId('movimiento_id')->nullable()->constrained('movimientos')->nullOnDelete();
+            $table->unsignedBigInteger('movimiento_id')->nullable();
             $table->timestamps();
         });
 

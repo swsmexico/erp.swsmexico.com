@@ -45,7 +45,7 @@ return new class extends Migration
             $table->foreignId('departamento_id')->nullable()->constrained('departamentos')->nullOnDelete();
             $table->foreignId('prefactura_id')->nullable()->constrained('prefacturas')->nullOnDelete()
                   ->comment('Prefactura standalone cuando no va a proyecto');
-            $table->foreignId('movimiento_id')->nullable()->constrained('movimientos')->nullOnDelete();
+            $table->unsignedBigInteger('movimiento_id')->nullable();
             $table->timestamps();
         });
     }

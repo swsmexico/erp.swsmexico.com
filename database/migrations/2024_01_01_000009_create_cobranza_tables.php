@@ -51,7 +51,7 @@ return new class extends Migration
             $table->date('fecha_pago');
             $table->foreignId('cuenta_id')->constrained('cuentas')->cascadeOnDelete();
             $table->decimal('total', 14, 2);
-            $table->foreignId('movimiento_id')->nullable()->constrained('movimientos')->nullOnDelete();
+            $table->unsignedBigInteger('movimiento_id')->nullable();
             $table->foreignId('usuario_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
         });

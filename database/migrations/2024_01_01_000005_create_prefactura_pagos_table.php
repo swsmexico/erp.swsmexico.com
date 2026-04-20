@@ -19,8 +19,8 @@ return new class extends Migration
             $table->decimal('iva', 12, 2)->default(0);
             $table->decimal('total', 12, 2)->default(0);
             $table->string('cuenta')->nullable()->comment('SWS Banamex o LLC Banamex');
-            $table->foreignId('movimiento_id')->nullable()->constrained('movimientos')->nullOnDelete()
-                  ->comment('Entrada generada en Estados de Cuenta');
+            $table->unsignedBigInteger('movimiento_id')->nullable()
+                  ->comment('Entrada generada en Estados de Cuenta — FK se agrega en migración de movimientos');
             $table->timestamps();
         });
     }
