@@ -10,7 +10,10 @@
         >
             <!-- Logo -->
             <div class="flex items-center h-16 px-4 border-b border-gray-200 shrink-0">
-                <img src="/images/logo.png" alt="SWS" class="h-8 w-8 shrink-0" />
+                <div
+                    class="flex items-center justify-center w-8 h-8 rounded-lg shrink-0 font-bold text-white text-xs"
+                    style="background:#5CC8F2;"
+                >SWS</div>
                 <span
                     v-if="sidebarOpen"
                     class="ml-3 font-bold text-sm transition-opacity duration-200"
@@ -168,6 +171,9 @@
             </main>
         </div>
 
+        <!-- Flash Messages -->
+        <FlashMessages />
+
         <!-- Overlay para cerrar menús en móvil -->
         <div
             v-if="notifOpen || userMenuOpen || searchOpen"
@@ -189,6 +195,7 @@ import {
 } from '@heroicons/vue/24/outline'
 import NavItem from '@/Components/Layout/NavItem.vue'
 import NotifItem from '@/Components/Layout/NotifItem.vue'
+import FlashMessages from '@/Components/UI/FlashMessages.vue'
 
 const page = usePage()
 const sidebarOpen = ref(true)
